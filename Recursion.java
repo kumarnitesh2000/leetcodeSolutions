@@ -7,7 +7,7 @@ public class Recursion {
         You are climbing a stair case. It takes n steps to reach to the top.
         Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
     */
-    public List<List<Integer>> permutation(int[] nums,int k,List<List<Integer>> result){
+    public static List<List<Integer>> permutation(int[] nums,int k,List<List<Integer>> result){
 
 
         for(int i=k;i<nums.length;i++){
@@ -39,7 +39,7 @@ public class Recursion {
         return result;
 
     } 
-    public List<List<Integer>> permute(int[] nums){
+    public static List<List<Integer>> permute(int[] nums){
 
         return permutation(nums, 0,new ArrayList<List<Integer>>());
 
@@ -69,5 +69,21 @@ public class Recursion {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the no. of Steps : ");
         System.out.println("Total No. of Ways to climb stairs "+climbStairs(sc.nextInt()));
+        System.out.println("Permutaion of array \n Enter no. of element : ");
+        int num = sc.nextInt();
+        int[] nums = new int[num];
+        System.out.println("Enter the Elements of array");
+        for(int i=0;i<num;i++){
+            nums[i] = sc.nextInt();
+        }
+        List<List<Integer>> list = permute(nums); 
+        for(List<Integer> l:list){
+            for(Integer k: l){
+                System.out.print(k+"\t");
+            }
+            System.out.println("\n");
+        }
+      
+
     }
 }
